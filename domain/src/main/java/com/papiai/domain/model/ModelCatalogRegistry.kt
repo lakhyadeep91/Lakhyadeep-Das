@@ -1,0 +1,203 @@
+package com.papiai.domain.model
+
+object ModelCatalogRegistry {
+  val allModels: List<ModelArtifact> = listOf(
+    ModelArtifact(
+      id = "tess-eng",
+      name = "Tesseract OCR Fast — English",
+      category = ModelCategory.OCR,
+      languages = listOf(SupportedLanguage.ENGLISH),
+      version = "tessdata_fast-4.1.0",
+      totalBytes = 4_113_088L,
+      minFreeRamMb = 128,
+      minAndroidSdk = 24,
+      licenseName = "Apache-2.0",
+      licenseUrl = "https://github.com/tesseract-ocr/tessdata_fast/blob/main/LICENSE",
+      sourceName = "tesseract-ocr/tessdata_fast (GitHub)",
+      sourceUrl = "https://github.com/tesseract-ocr/tessdata_fast",
+      files = listOf(
+        ModelFileSpec(
+          relativePath = "tessdata/eng.traineddata",
+          downloadUrl = "https://github.com/tesseract-ocr/tessdata_fast/raw/main/eng.traineddata",
+          expectedBytes = 4_113_088L,
+          expectedSha256 = null,
+        )
+      ),
+      compatibilityNote = "ARM64 native via Tesseract4Android 4.9.0. Optimized for mid-range phones (Galaxy A52).",
+    ),
+    ModelArtifact(
+      id = "tess-hin",
+      name = "Tesseract OCR Fast — Hindi",
+      category = ModelCategory.OCR,
+      languages = listOf(SupportedLanguage.HINDI),
+      version = "tessdata_fast-4.1.0",
+      totalBytes = 1_122_751L,
+      minFreeRamMb = 128,
+      minAndroidSdk = 24,
+      licenseName = "Apache-2.0",
+      licenseUrl = "https://github.com/tesseract-ocr/tessdata_fast/blob/main/LICENSE",
+      sourceName = "tesseract-ocr/tessdata_fast (GitHub)",
+      sourceUrl = "https://github.com/tesseract-ocr/tessdata_fast",
+      files = listOf(
+        ModelFileSpec(
+          relativePath = "tessdata/hin.traineddata",
+          downloadUrl = "https://github.com/tesseract-ocr/tessdata_fast/raw/main/hin.traineddata",
+          expectedBytes = 1_122_751L,
+          expectedSha256 = null,
+        )
+      ),
+      compatibilityNote = "Devanagari script OCR via Tesseract4Android 4.9.0. Very lightweight (~1.1 MB).",
+    ),
+    ModelArtifact(
+      id = "tess-ori",
+      name = "Tesseract OCR Fast — Odia",
+      category = ModelCategory.OCR,
+      languages = listOf(SupportedLanguage.ODIA),
+      version = "tessdata_fast-4.1.0",
+      totalBytes = 1_480_066L,
+      minFreeRamMb = 128,
+      minAndroidSdk = 24,
+      licenseName = "Apache-2.0",
+      licenseUrl = "https://github.com/tesseract-ocr/tessdata_fast/blob/main/LICENSE",
+      sourceName = "tesseract-ocr/tessdata_fast (GitHub)",
+      sourceUrl = "https://github.com/tesseract-ocr/tessdata_fast",
+      files = listOf(
+        ModelFileSpec(
+          relativePath = "tessdata/ori.traineddata",
+          downloadUrl = "https://github.com/tesseract-ocr/tessdata_fast/raw/main/ori.traineddata",
+          expectedBytes = 1_480_066L,
+          expectedSha256 = null,
+        )
+      ),
+      compatibilityNote = "Odia script OCR via Tesseract4Android 4.9.0 (~1.48 MB). Clear high-contrast screenshots recommended.",
+    ),
+    ModelArtifact(
+      id = "vosk-en",
+      name = "Vosk Small ASR — English",
+      category = ModelCategory.SPEECH_RECOGNITION,
+      languages = listOf(SupportedLanguage.ENGLISH),
+      version = "0.15",
+      totalBytes = 41_205_931L,
+      minFreeRamMb = 350,
+      minAndroidSdk = 24,
+      licenseName = "Apache-2.0",
+      licenseUrl = "https://alphacephei.com/vosk/models",
+      sourceName = "Alpha Cephei Vosk Models",
+      sourceUrl = "https://alphacephei.com/vosk/models",
+      files = listOf(
+        ModelFileSpec(
+          relativePath = "vosk-model-small-en-us-0.15.zip",
+          downloadUrl = "https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip",
+          expectedBytes = 41_205_931L,
+          expectedSha256 = null,
+        )
+      ),
+      isZipArchive = true,
+      extractDirName = "vosk-en",
+      compatibilityNote = "16 kHz offline speech recognition (~300 MB runtime RAM). Note: No verified Vosk small Odia ASR model exists.",
+    ),
+    ModelArtifact(
+      id = "vosk-hi",
+      name = "Vosk Small ASR — Hindi",
+      category = ModelCategory.SPEECH_RECOGNITION,
+      languages = listOf(SupportedLanguage.HINDI),
+      version = "0.22",
+      totalBytes = 44_000_000L,
+      minFreeRamMb = 350,
+      minAndroidSdk = 24,
+      licenseName = "Apache-2.0",
+      licenseUrl = "https://alphacephei.com/vosk/models",
+      sourceName = "Alpha Cephei Vosk Models",
+      sourceUrl = "https://alphacephei.com/vosk/models",
+      files = listOf(
+        ModelFileSpec(
+          relativePath = "vosk-model-small-hi-0.22.zip",
+          downloadUrl = "https://alphacephei.com/vosk/models/vosk-model-small-hi-0.22.zip",
+          expectedBytes = 44_000_000L,
+          expectedSha256 = null,
+        )
+      ),
+      isZipArchive = true,
+      extractDirName = "vosk-hi",
+      compatibilityNote = "16 kHz offline Hindi speech recognition (~300 MB runtime RAM) via Vosk Android 0.3.75.",
+    ),
+    ModelArtifact(
+      id = "indictrans2-en-indic",
+      name = "IndicTrans2 200M INT8 ONNX (En -> Indic)",
+      category = ModelCategory.TRANSLATION,
+      languages = listOf(SupportedLanguage.ENGLISH, SupportedLanguage.HINDI, SupportedLanguage.ODIA),
+      version = "dist-200M-int8",
+      totalBytes = 296_000_000L,
+      minFreeRamMb = 900,
+      minAndroidSdk = 24,
+      licenseName = "MIT",
+      licenseUrl = "https://huggingface.co/ai4bharat/indictrans2-en-indic-dist-200M/blob/main/LICENSE",
+      sourceName = "AI4Bharat IndicTrans2 (ONNX INT8 export)",
+      sourceUrl = "https://huggingface.co/Aji230923/indictrans2-en-indic-dist-200M-onnx",
+      files = listOf(
+        ModelFileSpec(
+          relativePath = "encoder.onnx",
+          downloadUrl = "https://huggingface.co/Aji230923/indictrans2-en-indic-dist-200M-onnx/resolve/main/encoder.onnx",
+          expectedBytes = 88_500_000L,
+          expectedSha256 = null,
+        ),
+        ModelFileSpec(
+          relativePath = "decoder.onnx",
+          downloadUrl = "https://huggingface.co/Aji230923/indictrans2-en-indic-dist-200M-onnx/resolve/main/decoder.onnx",
+          expectedBytes = 203_500_000L,
+          expectedSha256 = null,
+        ),
+        ModelFileSpec(
+          relativePath = "vocab.json",
+          downloadUrl = "https://huggingface.co/Aji230923/indictrans2-en-indic-dist-200M-onnx/resolve/main/vocab.json",
+          expectedBytes = 3_800_000L,
+          expectedSha256 = null,
+        ),
+      ),
+      compatibilityNote = "Translates English -> Hindi & Odia offline via ONNX Runtime. Requires >= 900 MB free RAM; auto-unloads after use.",
+    ),
+    ModelArtifact(
+      id = "indictrans2-indic-en",
+      name = "IndicTrans2 200M INT8 ONNX (Indic -> En)",
+      category = ModelCategory.TRANSLATION,
+      languages = listOf(SupportedLanguage.HINDI, SupportedLanguage.ODIA, SupportedLanguage.ENGLISH),
+      version = "dist-200M-int8-mobile",
+      totalBytes = 285_000_000L,
+      minFreeRamMb = 900,
+      minAndroidSdk = 24,
+      licenseName = "MIT",
+      licenseUrl = "https://huggingface.co/ai4bharat/indictrans2-indic-en-dist-200M/blob/main/LICENSE",
+      sourceName = "AI4Bharat IndicTrans2 (Mobile INT8 ONNX export)",
+      sourceUrl = "https://huggingface.co/ngiftsun/indictrans2-indic-en-int8-mobile",
+      files = listOf(
+        ModelFileSpec(
+          relativePath = "encoder_model.onnx",
+          downloadUrl = "https://huggingface.co/ngiftsun/indictrans2-indic-en-int8-mobile/resolve/main/encoder_model.onnx",
+          expectedBytes = 88_000_000L,
+          expectedSha256 = null,
+        ),
+        ModelFileSpec(
+          relativePath = "decoder_model.onnx",
+          downloadUrl = "https://huggingface.co/ngiftsun/indictrans2-indic-en-int8-mobile/resolve/main/decoder_model.onnx",
+          expectedBytes = 193_000_000L,
+          expectedSha256 = null,
+        ),
+        ModelFileSpec(
+          relativePath = "src_vocab.txt",
+          downloadUrl = "https://huggingface.co/ngiftsun/indictrans2-indic-en-int8-mobile/resolve/main/src_vocab.txt",
+          expectedBytes = 2_000_000L,
+          expectedSha256 = null,
+        ),
+        ModelFileSpec(
+          relativePath = "tgt_vocab.txt",
+          downloadUrl = "https://huggingface.co/ngiftsun/indictrans2-indic-en-int8-mobile/resolve/main/tgt_vocab.txt",
+          expectedBytes = 2_000_000L,
+          expectedSha256 = null,
+        ),
+      ),
+      compatibilityNote = "Translates Hindi & Odia -> English offline via ONNX Runtime. Requires >= 900 MB free RAM.",
+    ),
+  )
+
+  fun findById(id: String): ModelArtifact? = allModels.firstOrNull { it.id == id }
+}

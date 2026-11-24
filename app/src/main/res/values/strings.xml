@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PAPI AI</string>
+    <string name="accessibility_service_description">PAPI AI reads visible text from your screen on request and inserts dictated text into non-password input fields. Passwords and protected windows are always skipped.</string>
+</resources>

@@ -1,0 +1,6 @@
+{
+  "name": "PAPI AI",
+  "description": "Free, open-source, offline-first universal voice, OCR, screen reader, and Odia/Hindi/English translator for Android.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
